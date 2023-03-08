@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> SIMULADOR FINANCEIRO </h1>
+    <div id="div_perdinhaP"></div>
+
+    <h3> FATURAMENTO MENSAL DA EMPRESA</h3>
+    <input type="number" id="in_mensal">
+    
+
+    <button onclick="calcular()"> CARCULAR PERDA </button>
+
+    <div id="div_perda"></div>
+
+
+
+
+</body>
+</html>
+<script>
+
+
+function calcular() {
+var minutinho= Number(9000)    
+var faturamento= Number(in_mensal.value)
+var horas= Number(minutinho *60)
+var dia= Number(minutinho * 1440)
+var mes= Number(minutinho * 43800)
+var perdas= Number(faturamento - minutinho)
+var perdinha= Number(faturamento - horas)
+var perdinhas= Number(faturamento - dia)
+var perdona= Number(faturamento - mes)
+
+
+
+
+div_perdinhaP.innerHTML= ` <br>Voce perdera em 1 minuto ${minutinho} dolares`
+div_perdinhaP.innerHTML += ` <br>voce perdera em uma hora ${horas} dolares`
+div_perdinhaP.innerHTML += ` <br>voce perdera em um dia ${dia} dolares`
+div_perdinhaP.innerHTML += ` <br>voce perdera em um mes ${mes} dolares <br>`
+
+
+if( faturamento >0 ){
+div_perda.innerHTML = ``
+div_perda.innerHTML+= `<br> seu faturamento sera de ${perdas} se ficar desligado por <b>1 minuto </b>`
+div_perda.innerHTML+= `<br> seu faturamento sera de ${perdinha} se ficar desligado por <b>1 hora </b.`
+div_perda.innerHTML+= `<br> seu faturamento sera de ${perdinhas} se ficar desligado por <b>1 dia </b>`
+div_perda.innerHTML+= `<br> seu faturamento sera de ${perdona} se ficar desligado por <b>1 mes </b>`
+}
+}
+
+</script>
